@@ -32,19 +32,17 @@
   color: red;
 }
 .table tbody tr td img{
-  width: 250px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 130px;
 }
 .table tbody{
   text-align: center;
 }
 
 .table tbody tr{
-  display: flex
-;
-    justify-content: center;
-    align-items: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .headerBox {
   display: flex;
@@ -284,10 +282,10 @@
 
   }
   .table tbody tr{
-    width: 403px;
-
+    max-width: 600px;
+    width:100%;
   }
   .table tbody tr td img{
-  max-width: 38%;
+  max-width: 30%;
 }
 }
