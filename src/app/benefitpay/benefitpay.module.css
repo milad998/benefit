@@ -1,0 +1,44 @@
+.container{
+    margin: 0 auto;
+    width: 77%;
+    color: #636060;
+}
+.container form div{
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+
+}
+.container form div input{
+    width: 175px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #7a7979;
+    color: #636060;
+}
+.container form .btn{
+    justify-content: center;
+    gap: 10px;
+}
+.container form .btn button{
+        width: 70px;
+    height: 30px;
+    background: #fb395e;
+    border: none;
+    border-radius: 5px;
+}
+.container form div div select{
+    width: 83px;
+    height: 30px;
+    background: #fff;
+    color: black;
+}
+.container b{
+    color: #fb395e;
+    font-size: 16px;
+}
+.container p{
+    font-size: 7px;
+}
