@@ -1,5 +1,3 @@
-
-
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -23,29 +21,31 @@
   background-color: #fff;
 } */
 
-.table{
+.table {
   margin: 0 auto;
   padding: 5em 0;
 }
-.table tbody tr td{
+
+.table tbody tr td {
   width: 250px;
   color: red;
 }
-.table tbody tr td img{
+
+.table tbody tr td img {
   width: 250px;
   max-width: 100%;
 }
-.table tbody{
+
+.table tbody {
   text-align: center;
 }
 
-.table tbody tr{
-  display: flex
-;
-    justify-content: center;
-    align-items: center;
-  
+.table tbody tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .headerBox {
   display: flex;
   flex-direction: column;
@@ -115,9 +115,7 @@
   display: flex;
   flex-direction: column;
   margin: -27px auto;
-
   background-color: rgba(255, 255, 255, 0.555);
-
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
@@ -160,26 +158,27 @@
   justify-content: center;
   gap: 10px;
 }
-.closes{
-    width: 95px;
-    border-radius: 5px;
-    /* padding: 3px; */
-    border: 0;
-    background-color: #208504;
-    color: white;
-    font-size: 21px;
-    padding: 3px;
+
+.closes {
+  width: 95px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #208504;
+  color: white;
+  font-size: 21px;
+  padding: 3px;
 }
-.aseccuss{
-    width: 95px;
-    border-radius: 5px;
-    /* padding: 3px; */
-    border: 0;
-    background-color: #e5484d;
-    color: white;
-    font-size: 21px;
-    padding: 3px;
+
+.aseccuss {
+  width: 95px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #e5484d;
+  color: white;
+  font-size: 21px;
+  padding: 3px;
 }
+
 .detailsGrid div {
   display: flex;
   flex-direction: column;
@@ -192,6 +191,7 @@
   justify-content: space-between;
   margin-top: 1rem;
 }
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -217,78 +217,82 @@
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-.page{
+
+.page {
   color: #1a1a1a;
 }
 
 /* ✅ Media Query لأجهزة الموبايل */
 @media screen and (max-width: 720px) {
-  .page img{
+  .page img {
     margin-bottom: 30px;
   }
-  .paymentBox{
-       max-width: 602px;
+  .paymentBox {
+    max-width: 602px;
   }
-  .paymentBox div p{
+  .paymentBox div p {
     font-size: 13px;
     margin: 14px 0;
   }
-  .infoss{
+  .infoss {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
-  .names h5{
+  .names h5 {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 50px;
     margin-top: 30px;
   }
-  .names{
+  .names {
     text-align: center;
   }
-  .boxbox{
-        display: flex
-;
+  .boxbox {
+    display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     margin-bottom: 15px;
   }
-  .amountBox{
-        display: flex
-;
+  .amountBox {
+    display: flex;
     flex-direction: column-reverse;
   }
-  .amountDecimal{
-        font-size: 16px;
-        margin: -3px;
-        font-weight: bold;
+  .amountDecimal {
+    font-size: 16px;
+    margin: -3px;
+    font-weight: bold;
   }
-  .currency{
+  .currency {
     font-size: 13px;
     margin: 0;
     font-weight: bold;
-    
   }
-  .detailsGrid{
+  .detailsGrid {
     margin-bottom: 30px;
   }
 }
 
+/* ✅ تعديل Navbar و Footer للموبايل */
 @media (max-width: 600px) {
-  .container{
+  .container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .table {
+    font-size: 9px;
     margin: 0 auto;
   }
-  .table{
-    font-size: 9px;
-
+  .table tbody tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto; /* إلغاء العرض الثابت */
   }
-  .table tbody tr{
-    width: 403px;
-
+  .table tbody tr td {
+    text-align: center;
   }
-  .table tbody tr td img{
-  max-width: 38%;
-}
-}
-
+  .table tbody tr td img {
+    max-width: 60%;
+  }
+  }
