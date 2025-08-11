@@ -21,6 +21,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKE0HkaQg-vp2Ut4I8WyAaIAbMYN2BN71N4A&s" />
+  
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
         {children}
