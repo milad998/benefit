@@ -2,7 +2,7 @@
 import styles from './finish.module.css'
 import {useState,useEffect} from 'react'
 import {useRouter,useSearchParams} from 'next/navigation'
-const Finish = ()=>{
+const FinishContent = ()=>{
     const [showPage,setShowPage]=useState(true);
     const router = useRouter();
     const x = useSearchParams();
@@ -33,4 +33,10 @@ const Finish = ()=>{
 
 }
 
-export default Finish;
+export default function Finish() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <FinishContent />
+    </Suspense>
+  );
+}
