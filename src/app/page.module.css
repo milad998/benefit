@@ -19,21 +19,22 @@
   direction: rtl;
 }
 
-/* .container{
+.container{
   background-color: #fff;
-} */
+  margin:0 auto;
+  width:77%
+} 
 
-.table{
-  margin: 0 auto;
+.table
   padding: 5em 0;
 }
 .table tbody tr td{
-  width: 250px;
+  
   color: red;
 }
 .table tbody tr td img{
-  width: 100%;
-  max-width: 130px;
+  width:20%;
+  max-width: 
 }
 .table tbody{
   text-align: center;
@@ -275,7 +276,6 @@
 
 @media (max-width: 600px) {
   .container{
-    margin: 0 auto;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -284,11 +284,4 @@
     font-size: 9px;
 
   }
-  .table tbody tr td {
-  max-width: 120px;
-  width: 100%;
-  }
-  .table tbody tr td img{
-  max-width: 30%;
-}
 }
