@@ -1,5 +1,6 @@
 "use client"
 import styles from './finish.module.css'
+import { Suspense } from "react";
 import {useState,useEffect} from 'react'
 import {useRouter,useSearchParams} from 'next/navigation'
 const FinishContent = ()=>{
