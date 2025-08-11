@@ -276,14 +276,17 @@
 @media (max-width: 600px) {
   .container{
     margin: 0 auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
   .table{
     font-size: 9px;
 
   }
-  .table tbody tr{
-    max-width: 600px;
-    width:100%;
+  .table tbody tr td {
+  max-width: 120px;
+  width: 100%;
   }
   .table tbody tr td img{
   max-width: 30%;
