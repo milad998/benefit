@@ -303,7 +303,7 @@
   .table tbody tr {
     display: flex;
     flex-direction: row; /* تبقى صف */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     flex-wrap: wrap; /* تلتف إذا ضاق المكان */
