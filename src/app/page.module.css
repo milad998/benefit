@@ -279,15 +279,25 @@
     margin: 0 auto;
     text-align: center;
   }
+  .navbar,
+  .footer {
+    display: flex;
+    flex-direction: row; /* ✅ تبقى صف */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* ✅ تلتف إذا ضاق المكان */
+  }
   .table {
     font-size: 9px;
     margin: 0 auto;
   }
   .table tbody tr {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* ✅ تبقى صف */
+    justify-content: center;
     align-items: center;
-    width: auto; /* إلغاء العرض الثابت */
+    width: auto;
+    flex-wrap: wrap; /* ✅ تلتف إذا ضاق المكان */
   }
   .table tbody tr td {
     text-align: center;
@@ -295,4 +305,4 @@
   .table tbody tr td img {
     max-width: 60%;
   }
-  }
+}
