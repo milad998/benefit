@@ -9,6 +9,15 @@
   }
 }
 
+/* container موجود في JSX (div className={styles.container}) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -34,16 +43,19 @@
 .table tbody tr td img {
   width: 250px;
   max-width: 100%;
+  height: auto;
 }
 
 .table tbody {
   text-align: center;
 }
 
+/* افتراضياً الجدول يستخدم صفوف مرنة */
 .table tbody tr {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 12px;
 }
 
 .headerBox {
@@ -222,7 +234,7 @@
   color: #1a1a1a;
 }
 
-/* ✅ Media Query لأجهزة الموبايل */
+/* ✅ Media Query لأجهزة الموبايل - تبقى كـ ROW وتظل بالوسط */
 @media screen and (max-width: 720px) {
   .page img {
     margin-bottom: 30px;
@@ -273,36 +285,41 @@
   }
 }
 
-/* ✅ تعديل Navbar و Footer للموبايل */
+/* تعديل بدون إضافة كلاسات جديدة: نستخدم .container و .table فقط */
 @media (max-width: 600px) {
   .container {
     margin: 0 auto;
     text-align: center;
+    padding: 0 12px;
   }
-  .navbar,
-  .footer {
-    display: flex;
-    flex-direction: row; /* ✅ تبقى صف */
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* ✅ تلتف إذا ضاق المكان */
-  }
+
   .table {
-    font-size: 9px;
+    font-size: 14px;
     margin: 0 auto;
+    padding: 2.5em 0;
   }
+
+  /* نحافظ على شكل صف (row) على الموبايل، لكن نسمح بالـ wrap */
   .table tbody tr {
     display: flex;
-    flex-direction: row; /* ✅ تبقى صف */
-    justify-content: space-between;
+    flex-direction: row; /* تبقى صف */
+    justify-content: center;
     align-items: center;
-    width: auto;
-    flex-wrap: wrap; /* ✅ تلتف إذا ضاق المكان */
+    width: 100%;
+    flex-wrap: wrap; /* تلتف إذا ضاق المكان */
+    gap: 10px;
   }
+
   .table tbody tr td {
+    width: auto; /* إزالة العرض الثابت */
     text-align: center;
+    padding: 6px 8px;
+    box-sizing: border-box;
   }
+
   .table tbody tr td img {
     max-width: 30%;
+    height: auto;
+    display: inline-block;
   }
-}
+  }
