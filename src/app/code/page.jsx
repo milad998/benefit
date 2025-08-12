@@ -50,8 +50,8 @@ function CodePageContent() {
           Purchase Authentication
         </h4>
         <br/>
-        <p>We have sent you an SMS with an OTP code to your registered mobile number<p/>
-        <p>Enter your OTP code below:<p/>
+        <p>We have sent you an SMS with an OTP code to your registered mobile number</p>
+        <p>Enter your OTP code below:</p>
         <div className="mb-3">
           <input 
             type="text" 
