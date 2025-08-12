@@ -1,61 +1,60 @@
-.container{
-    margin: 0 auto;
-    width: 77%;
-    color: #636060;
-}
-.container form div{
-    display: flex
-;
-    justify-content: space-between;
-    align-items: center;
-    margin: 16px 0;
-
-}
-.container form div input{
-    width: 175px;
-    height: 30px;
-    background-color: #fff;
-    border: 1px solid #7a7979;
-    color: #636060;
-}
-.container form .btn{
-    justify-content: center;
-    gap: 10px;
-}
-.container form .btn button{
-        width: 70px;
-    height: 30px;
-    background: #fb395e;
-    border: none;
-    border-radius: 5px;
-}
-
-.container form div div select{
-    width: 83px;
-    height: 30px;
-    background: #fff;
-    color: black;
-}
-.container b{
-    color: #fb395e;
-    font-size: 16px;
-}
-.container p{
-    font-size: 7px;
-}
 .container {
+  margin: 0 auto;
+  width: 77%;
   max-width: 600px;
-  margin: auto;
   padding: 20px;
+  color: #636060;
 }
 
-.btn {
+.container form div {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.container form div input {
+  width: 175px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #7a7979;
+  color: #636060;
+}
+
+.container form div div select {
+  width: 83px;
+  height: 30px;
+  background: #fff;
+  color: black;
+  border: 1px solid #7a7979;
+}
+
+.container form .btn {
+  display: flex;
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-/* ✅ تنسيق رسائل الخطأ */
+.container form .btn button {
+  width: 70px;
+  height: 30px;
+  background: #fb395e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container b {
+  color: #fb395e;
+  font-size: 16px;
+}
+
+.container p {
+  font-size: 7px;
+}
+
 .errorBox {
   background-color: #fff3cd;
   color: #856404;
@@ -70,20 +69,20 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* ✅ استجابة للأجهزة الصغيرة */
 @media (max-width: 600px) {
-  .errorBox{
+  .errorBox {
     font-size: 0.85rem;
     padding: 8px 12px;
   }
 
-  .container form .btn{
+  .container form .btn {
     flex-direction: column;
-  }
-    
-  .container form input,
-  .container form select{        
     width: 100%;
   }
-    
+
+  .container form input,
+  .container form select,
+  .container form .btn button {
+    width: 100%;
+  }
 }
