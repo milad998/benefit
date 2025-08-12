@@ -72,16 +72,17 @@
 
 /* ✅ استجابة للأجهزة الصغيرة */
 @media (max-width: 600px) {
-  .errorBox {
+  .errorBox{
     font-size: 0.85rem;
     padding: 8px 12px;
   }
 
-  .btn {
+  .container form .btn{
     flex-direction: column;
   }
+    
   .container form input,
-    .container form select{        
+  .container form select{        
     width: 100%;
   }
     
