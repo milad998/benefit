@@ -25,11 +25,10 @@
   width:77%
 } 
 
-.table
+.table{
   padding: 5em 0;
 }
-.table tbody tr td{
-  
+.table tbody tr td{  
   color: red;
 }
 .table tbody tr td img{
