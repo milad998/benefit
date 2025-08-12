@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta property="og:image" content="https://bahrainlibrary.com/wp-content/uploads/2023/01/Benefit-02.svg" />
+      <meta property="og:image" content="https://cdn.prod.website-files.com/63a327f073bbfd0ed01684d8/63a327f073bbfda053168bd8_benefit.png" />
   
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
