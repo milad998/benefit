@@ -7,9 +7,10 @@ import axios from 'axios';
 
 function CodePageContent() {
   const [code, setCode] = useState("");
-  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds countdown
+  const [timeLeft, setTimeLeft] = useState(60);
   const [expired, setExpired] = useState(false);
-  
+  const [resending, setResending] = useState(false);
+
   const searchParams = useSearchParams();
   const refN = searchParams.get("refN");
   const router = useRouter();
@@ -50,6 +51,16 @@ function CodePageContent() {
     }
   };
 
+  const handleResend = async () => {
+    setResending(true);
+    // هنا يمكنك إرسال طلب لإعادة إرسال الكود من الخادم إذا أردت
+    setTimeout(() => {
+      setTimeLeft(60);
+      setExpired(false);
+      setResending(false);
+    }, 1000); // محاكاة إرسال الكود (ثانية واحدة)
+  };
+
   return (
     <div 
       className="d-flex justify-content-center align-items-center vh-100" 
@@ -87,11 +98,21 @@ function CodePageContent() {
 
         <button 
           type="submit" 
-          className="btn w-100" 
+          className="btn w-100 mb-2" 
           style={{ backgroundColor: "#ff4d4d", color: "white" }}
           disabled={expired}
         >
           Confirm
+        </button>
+
+        {/* Resend Code Button */}
+        <button 
+          type="button"
+          onClick={handleResend}
+          className="btn btn-outline-danger w-100"
+          disabled={!expired || resending}
+        >
+          {resending ? "Resending..." : "Resend Code"}
         </button>
       </form>
     </div>
@@ -104,4 +125,4 @@ export default function CodePage() {
       <CodePageContent />
     </Suspense>
   );
-      }
+          }
