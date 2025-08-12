@@ -31,7 +31,7 @@ function HomeContent() {
             <span className={styles.amountMain}>{price}</span>
             <div className={styles.amountBox}>
               <span className={styles.amountDecimal}>000.</span>
-              <span className={styles.currency}>KWD</span>
+              <span className={styles.currency}>BHD</span>
             </div>
           </div>
           <div className={styles.names}>
