@@ -80,4 +80,9 @@
   .btn {
     flex-direction: column;
   }
+  .container form input,
+    .container form select{        
+    width: 100%;
+  }
+    
 }
