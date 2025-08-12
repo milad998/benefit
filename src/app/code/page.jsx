@@ -47,9 +47,11 @@ function CodePageContent() {
         style={{ backgroundColor: "white", width: "300px", border: "2px solid #ff4d4d" }}
       >
         <h4 className="text-center mb-3" style={{ color: "#b30000" }}>
-          إدخال الكود
+          Purchase Authentication
         </h4>
-
+        <br/>
+        <p>We have sent you an SMS with an OTP code to your registered mobile number<p/>
+        <p>Enter your OTP code below:<p/>
         <div className="mb-3">
           <input 
             type="text" 
