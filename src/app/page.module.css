@@ -90,7 +90,7 @@
 .amountMain {
   font-size: 30px;
   color: #333;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .amountDecimal {
@@ -267,7 +267,7 @@
   .currency{
     font-size: 13px;
     margin: 0;
-    margin-right:3px;
+    margin-right:8px;
     font-weight: bold;
     
   }
