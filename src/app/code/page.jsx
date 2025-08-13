@@ -15,9 +15,22 @@ function CodePageContent() {
   const refN = searchParams.get("refN");
   const router = useRouter();
 
+  // 🔹 منع الرجوع للخلف
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const preventBack = () => {
+        window.history.pushState(null, "", window.location.href);
+      };
+      window.history.pushState(null, "", window.location.href);
+      window.addEventListener("popstate", preventBack);
+      return () => window.removeEventListener("popstate", preventBack);
+    }
+  }, []);
+
+  // 🔹 العداد التنازلي
   useEffect(() => {
     if (timeLeft > 0) {
-      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      const timer = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
       return () => clearTimeout(timer);
     } else {
       setExpired(true);
@@ -86,11 +99,14 @@ function CodePageContent() {
             <p>We have sent you an SMS with an OTP code to your registered mobile number.</p>
             <p>Enter your OTP code below:</p>
 
-            <p className="text-danger fw-bold">
-              {expired 
-                ? "The code has expired." 
-                : `This code will expire in ${timeLeft}s`}
-            </p>
+            {/* 🔹 عداد الوقت */}
+            <div className="text-center mb-3">
+              <span className={`fw-bold ${expired ? 'text-danger' : 'text-success'}`}>
+                {expired 
+                  ? "The code has expired." 
+                  : `Time left: ${timeLeft}s`}
+              </span>
+            </div>
 
             <div className="mb-3">
               <input 
@@ -134,4 +150,4 @@ export default function CodePage() {
       <CodePageContent />
     </Suspense>
   );
-    }
+        }
