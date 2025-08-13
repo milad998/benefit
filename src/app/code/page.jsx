@@ -65,7 +65,7 @@ function CodePageContent() {
       <div className="row w-100 align-items-center">
         
         {/* الصورة */}
-        <div className="col-md-6 text-center mb-4 mb-md-0">
+        <div className="col-md-6 text-center mb-4 mb-md-3">
           <img 
             src="./IMG-20250813-WA0009.jpg" 
             alt="back image" 
