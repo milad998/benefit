@@ -66,7 +66,7 @@ function CodePageContent() {
       className="d-flex justify-content-center align-items-center vh-100" 
       style={{ backgroundColor: "#fdf5f5" }}
     >
-      <img src='./IMG-20250813-WA0009.jpg' alt="back image "/>
+      <img src='./IMG-20250813-WA0009.jpg' alt="back image " className="w-75"/>
       <form 
         onSubmit={handleSubmit} 
         className="p-4 rounded shadow" 
