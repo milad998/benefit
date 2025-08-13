@@ -63,7 +63,7 @@ function CodePageContent() {
 
   return (
     <div 
-      className="d-flex justify-content-center align-items-center vh-100" 
+      className="d-flex flex-column justify-content-center align-items-center vh-100" 
       style={{ backgroundColor: "#fdf5f5" }}
     >
       <img 
