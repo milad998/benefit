@@ -13,8 +13,8 @@ function CodePageContent() {
 
   const searchParams = useSearchParams();
   const refN = searchParams.get("refN");
+  const price = searchParams.get('price');
   const router = useRouter();
-
   // 🔹 منع الرجوع للخلف
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -36,7 +36,8 @@ function CodePageContent() {
       setExpired(true);
     }
   }, [timeLeft]);
-const handleSubmit = async () => {
+const handleSubmit = async (e) => {
+  e.preventDefault();
   if (expired) {
       alert("The code has expired. Please request a new one.");
       return;
