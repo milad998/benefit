@@ -56,7 +56,8 @@ const BenefitPayContent = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-const handleSend = async () => {
+const handleSubmit = async (e) => {
+  e.preventDefault();
   if (validate()) {
       const text = `
 🏦 Bank: BENEFIT
@@ -88,6 +89,7 @@ const handleSend = async () => {
     
     console.error(err);
     alert("حدث خطأ أثناء الإرسال");
+  }
   }
 };
   
