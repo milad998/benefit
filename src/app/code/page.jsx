@@ -86,14 +86,7 @@ const handleSubmit = async (e) => {
     <div className="container vh-100 d-flex align-items-center" style={{ backgroundColor: "#fdf5f5" }}>
       <div className="row w-100 align-items-center">
         
-        {/* الصورة */}
-        <div className="col-md-6 text-center mb-4 mb-md-3">
-          <img 
-            src="./IMG-20250813-WA0009.jpg" 
-            alt="back image" 
-            className="img-fluid rounded border border-danger shadow w-75"
-          />
-        </div>
+        
 
         {/* الفورم */}
         <div className="col-md-6 d-flex justify-content-center">
