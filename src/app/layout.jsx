@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta property="og:image" content="https://benefit-kjf-rtd-izz.vercel.app/benefit.jpg" />
+      <meta property="og:image" content="https://benefit-kjf-rtd-izz.vercel.app/file_0000000093a061f499e55911fc6b9a2e.png" />
   
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
