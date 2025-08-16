@@ -16,18 +16,22 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Benefit",
   description: "",
+  openGraph: {
+    images: [
+      "https://benefit-kjf-rtd-izz.vercel.app/file_0000000093a061f499e55911fc6b9a2e.png",
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta property="og:image" content="https://benefit-kjf-rtd-izz.vercel.app/file_0000000093a061f499e55911fc6b9a2e.png" />
-  
+      <head />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
-}
+      }
